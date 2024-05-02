@@ -1,0 +1,19 @@
+{
+  "name": "sdvx-keybind-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.2"
+  },
+  "dependencies": {
+    "node-hid": "^3.0.0",
+    "robotjs": "^0.6.0"
+  }
+}

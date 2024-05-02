@@ -1,0 +1,236 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9d9d9;
+    padding: 20px;
+ }
+ 
+ h1 {
+    font-size: 18px;
+    color: #000;
+ }
+ 
+ #controller-select {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+ }
+ 
+ #controller {
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+ }
+ 
+ #controller-button {
+    margin-left: 10px;
+    padding: 7px 12px;
+    background-color: #c5c5c5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+ }
+ 
+ #controller-button:hover {
+    background-color: #a5a5a5;
+ }
+ 
+ #layout-container {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+ }
+ 
+ #buttons-section {
+    background-color: #b1b1b1;
+    border-radius: 35px;
+    padding: 10px;
+    width: 80%; /* Make it slightly narrower */
+    border: 2px solid #000;
+ }
+ 
+ .button-row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0; /* Space between rows */
+ }
+ 
+ .keybind, .direction, .key {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background-color: #dcdcdc; /* Button background color */
+    text-align: center; /* Center text inside */
+    font-size: 14px; /* Ensure text is readable */
+ }
+ 
+ #config-section-wrapper {
+    position: relative;
+    width: 35%; /* 1/3 of the width */
+    margin-left: 2%; /* Adds padding between sections */
+ }
+ 
+ #config-section-background {
+    position: absolute;
+    background-color: #b1b1b1; /* Dark gray background */
+    border-radius: 10px; /* Rounded corners */
+    width: 110%; /* Wider than the section */
+    height: 110%; /* Taller than the section */
+    left: -5%; /* Offset for equal spacing */
+    top: -5%; /* Offset for equal spacing */
+    border: 2px solid #000;
+ }
+ 
+ #config-section {
+    background-color: #d9d9d9;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative; /* Sits above the background rectangle */
+    border: 2px solid #000;
+ }
+ 
+ .config-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+ }
+ 
+ .config-entry label, .config-entry input {
+    font-size: 14px; /* Consistent font size */
+    font-weight: bolder;
+}
+
+ .config-entry input {
+    text-align: center; /* Center text in the input field */
+    width: 40%;
+    margin-right: 20px;
+ }
+ 
+ .config-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+ }
+ 
+ #reset, #save, #end {
+    padding: 7px 12px;
+    background-color: #a1a1a1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #000;
+ }
+ 
+ #reset:hover, #save:hover, #end:hover {
+    background-color: #a5a5a5;
+ }
+
+ hr {
+    border: 1px solid #000000; /* Horizontal line styling */
+    width: 100%;
+    margin-top: 5px; /* Space between elements */
+    margin-bottom: 10px; /* Space between elements */
+ }
+
+ .holdkeymodetext{
+    font-weight: bold;
+    padding-bottom: 20px;
+ }
+
+ #hold-key-mode {
+    width: 24px; /* Increase the checkbox size */
+    height: 24px;
+    margin-left: 10px; /* Space between the label and checkbox */
+    vertical-align: middle; /* Ensures vertical alignment with the label */
+ }
+
+ .controller-background {
+    background-color: #d9d9d9;
+    border-radius: 50px;
+    width: 80%; /* Narrower */
+    height: 80%; /* Taller */
+    margin: 0 auto; /* Center it horizontally */
+    position: relative; /* For vertical alignment */
+    top: 50%; /* Start at halfway mark */
+    transform: translateY(-50%); /* Offset by 50% to center */
+ }
+
+ .controller-circle {
+    width: 60px; /* Diameter */
+    height: 60px; /* Consistent height */
+    background-color: #b1b1b1; /* Color consistent with inner rectangle */
+    border: 1px solid #000; /* Border for visibility */
+    border-radius: 50%; /* Makes it a circle */
+    position: absolute; /* Allows for placement control */
+    top: 15%; /* Offset vertically from top */
+ }
+ 
+ .controller-circle.left {
+    left: 8%; /* Offset from the left side */
+ }
+ 
+ .controller-circle.right {
+    right: 8%; /* Offset from the right side */
+ }
+
+ .diamond {
+    width: 45px;
+    height: 45px;
+    background-color: #b1b1b1;
+    border: 1px solid #000;
+    position: absolute;
+    top: 22%;
+    left: 48.9%; /* Start at halfway mark */
+    transform: rotate(45deg) translateX(-50%); /* Rotate and offset horizontally */
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    position: absolute; /* Absolute positioning */
+    bottom: 36%; /* 36% from the bottom of the controller background */
+    width: 100%; /* Full width */
+    left: 50%; /* Center the row horizontally */
+    transform: translateX(-50%); /* Offset by 50% to center */
+}
+
+.button-rect {
+    width: 92px; /* Rectangle width */
+    height: 40px; /* Rectangle height */
+    background-color: #b1b1b1;
+    border: 1px solid #000;
+    margin: 0 13px; /* Space between rectangles */
+}
+
+.button-bottom-row {
+    display: flex;
+    justify-content: center;
+    position: absolute; /* Absolute positioning */
+    bottom: 13%; /* 36% from the bottom of the controller background */
+    width: 100%; /* Full width */
+    left: 50%; /* Center the row horizontally */
+    transform: translateX(-50%); /* Offset by 50% to center */
+}
+
+.button-bottom-row .button-rect{
+    margin: 0 71px; /* Space between rectangles */
+
+}
+
+.inner-box {
+    width: 60%; /* Proportional to parent */
+    height: 60%; /* Proportional to parent */
+    background-color: #e0e0e0; /* Inner box color */
+    border: 1px solid #000; /* Border for visibility */
+    position: absolute; /* Position within parent */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for centering */
+}

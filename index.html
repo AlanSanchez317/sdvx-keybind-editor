@@ -1,0 +1,125 @@
+<!-- index.html -->
+<html>
+<head>
+<title>SDVX Keybind Editor</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>SOUND-VOLTEX Keybind Editor</h1>
+
+<div id="controller-select">
+    <select id="controller">
+        <option value="V">V</option>
+        <option value="Dynamic">Dynamic</option>
+        <!-- Other controller options can be added dynamically -->
+    </select>
+    <button id="controller-button">Select your controller</button>
+</div>
+
+<!-- For the layout section, we are trying to replicate the style the symbol of a SDVX controller, which is what is in the wireframe. -->
+<div id="layout-container">
+<div id="buttons-section">
+    <div class="controller-background">
+        <div class="controller-circle left">
+            <div class="inner-box"></div>
+        </div>
+        <div class="controller-circle right">
+            <div class="inner-box"></div>
+        </div>
+        <div class="diamond">
+            <div class="inner-box"></div>
+        </div>
+        <div class="button-row">
+            <div class="button-rect">
+                <div class="inner-box"></div>
+            </div>
+            <div class="button-rect">
+                <div class="inner-box"></div>
+            </div>
+            <div class="button-rect">
+                <div class="inner-box"></div>
+            </div>
+            <div class="button-rect">
+                <div class="inner-box"></div>
+            </div>
+        </div>
+        <div class="button-bottom-row">
+            <div class="button-rect">
+                <div class="inner-box"></div>
+            </div>
+            <div class="button-rect">
+                <div class="inner-box"></div>
+            </div>
+        </div>
+        <!-- Inner content of the controller background remains -->
+    </div>
+</div>
+
+
+
+
+    <div id="config-section-wrapper">
+        <div id="config-section-background"></div>
+<div id="config-section">
+    <label class="holdkeymodetext" for="hold-key-mode">Hold Key Mode</label>
+    <input type="checkbox" id="hold-key-mode">
+    <hr> <!-- Adds a horizontal line below the Hold Key Mode option -->
+
+
+    <div id="keybind-configs">
+        <!-- Keybind configuration entries, consistent with the design -->
+        <div class="config-entry">
+            <label for="bt-a">BT-A Keybind</label>
+            <input type="text" id="bt-a" value="D">
+            </div>
+            <div class="config-entry">
+            <label for="bt-a">BT-B Keybind</label>
+            <input type="text" id="bt-b" value="F">
+            </div>
+            <div class="config-entry">
+            <label for="bt-a">BT-C Keybind</label>
+            <input type="text" id="bt-c" value="J">
+            </div>
+            <div class="config-entry">
+                <label for="bt-a">BT-D Keybind</label>
+                <input type="text" id="bt-d" value="K">
+            </div>
+            <div class="config-entry">
+                <label for="bt-a">FX-L Keybind</label>
+                <input type="text" id="fx-l" value="S">
+            </div>
+            <div class="config-entry">
+                <label for="bt-a">FX-R Keybind</label>
+                <input type="text" id="fx-r" value="L">
+            </div>
+            <div class="config-entry">
+                <label for="bt-a">VOL-L Keybind</label>
+                <input type="text" id="vol-l" value="V">
+            </div>
+            <div class="config-entry">
+                <label for="bt-a">VOL-R Keybind</label>
+                <input type="text" id="vol-r" value="N">
+            </div>
+            <div class="config-entry">
+                <label for="bt-a">START Keybind</label>
+                <input type="text" id="start" value="ENTER">
+            </div>
+
+<!-- These options, once with JS Support, should allow the user to enter whatever key for that specific button, save it, and make it appear on the layout section -->
+        </div>
+
+    <div class="config-buttons">
+        <button id="reset">RESET</button>
+        <button id="end">END</button>
+        <button id="save">SAVE</button>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
