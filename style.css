@@ -198,71 +198,42 @@ body {
     transform: rotate(45deg) translateX(-50%); /* Rotate and offset horizontally */
 }
 
-.button-row {
-    display: flex;
-    justify-content: center;
-    position: absolute; /* Absolute positioning */
-    bottom: 36%; /* 36% from the bottom of the controller background */
-    width: 100%; /* Full width */
-    left: 50%; /* Center the row horizontally */
-    transform: translateX(-50%); /* Offset by 50% to center */
-}
 
-.button-bottom-row {
-    display: flex;
-    justify-content: center;
-    position: absolute; /* Absolute positioning */
-    bottom: 13%; /* 36% from the bottom of the controller background */
-    width: 100%; /* Full width */
-    left: 50%; /* Center the row horizontally */
-    transform: translateX(-50%); /* Offset by 50% to center */
-}
-
-.button-bottom-row .button-rect{
-    margin: 0 71px; /* Space between rectangles */
-
-}
-
-/* Standardize .inner-box size, position, and color */
-.inner-box { 
-   width: 60%; /* Half the parent's width */
-   height: 60%; /* 60% of the parent's height */
-   background-color: #e0e0e0; /* Color for the inner box */
+.inner-box {
+   width: 60%; /* Box occupies 60% of the parent's width */
+   height: 60%; /* Box occupies 60% of the parent's height */
+   background-color: #e0e0e0; /* Inner box color */
    border: 1px solid #000; /* Border for visibility */
    position: absolute; /* For internal positioning */
    top: 50%; /* Center vertically */
    left: 50%; /* Center horizontally */
-   transform: translate(-50%, -50%); /* Offset to center */
+   transform: translate(-50%, -50%); /* Offset for centering */
 }
 
-.inner-box-1,
-.inner-box-2,
-.inner-box-3,
-.inner-box-4,
-.inner-box-5,
-.inner-box-6 {
-   /* Inherit and refine */
-   width: 50%;
-   height: 60%;
-   background-color: #e0e0e0;
-   border: 1px solid #000;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-}
 
-/* Ensure each button-row is well spaced */
 .button-row,
 .button-bottom-row {
-   display: flex;
-   justify-content: center; /* Consistent centering */
+    display: grid; /* Use a grid layout */
+    grid-template-columns: repeat(4, auto); /* Four evenly spaced columns */
+    gap: 10px; /* Space between items */
+    width: 80%; /* Define overall row width */
+    position: absolute; /* Absolute positioning */
+    left: 50%; /* Center the row */
+    transform: translateX(-50%); /* Offset by 50% to center */
+}
+
+.button-row {
+    bottom: 36%; /* Place the row 36% from the bottom */
+}
+
+.button-bottom-row {
+    bottom: 13%; /* Place the lower row 13% from the bottom */
 }
 
 .button-rect {
-   width: 80px; /* Standard width */
-   height: 40px; /* Standard height */
-   background-color: #b1b1b1;
-   border: 1px solid #000;
-   margin: 0 10px; /* Consistent spacing */
+    background-color: #b1b1b1; /* Box color */
+    border: 1px solid #000; /* Box border */
+    width: 80px; /* Box width */
+    height: 40px; /* Box height */
 }
+
