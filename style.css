@@ -4,6 +4,12 @@
    src: url(./Inter-Black.ttf);
 }
 
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #d9d9d9;
@@ -159,81 +165,128 @@ body {
  }
 
  .controller-background {
-    background-color: #d9d9d9;
-    border-radius: 50px;
-    width: 80%; /* Narrower */
-    height: 80%; /* Taller */
-    margin: 0 auto; /* Center it horizontally */
-    position: relative; /* For vertical alignment */
-    top: 50%; /* Start at halfway mark */
-    transform: translateY(-50%); /* Offset by 50% to center */
- }
-
- .controller-circle {
-    width: 60px; /* Diameter */
-    height: 60px; /* Consistent height */
-    background-color: #b1b1b1; /* Color consistent with inner rectangle */
-    border: 1px solid #000; /* Border for visibility */
-    border-radius: 50%; /* Makes it a circle */
-    position: absolute; /* Allows for placement control */
-    top: 15%; /* Offset vertically from top */
- }
- 
- .controller-circle.left {
-    left: 8%; /* Offset from the left side */
- }
- 
- .controller-circle.right {
-    right: 8%; /* Offset from the right side */
- }
-
- .diamond {
-    width: 45px;
-    height: 45px;
-    background-color: #b1b1b1;
-    border: 1px solid #000;
-    position: absolute;
-    top: 22%;
-    left: 48.9%; /* Start at halfway mark */
-    transform: rotate(45deg) translateX(-50%); /* Rotate and offset horizontally */
+   background-color: #d9d9d9;
+   border-radius: 50px;
+   width: 80%; /* Narrower */
+   height: 80%; /* Taller */
+   margin: 0 auto; /* Center it horizontally */
+   position: relative; /* For vertical alignment */
+   top: 50%; /* Start at halfway mark */
+   transform: translateY(-50%); /* Offset by 50% to center */
 }
 
-
-.inner-box {
-   width: 60%; /* Box occupies 60% of the parent's width */
-   height: 60%; /* Box occupies 60% of the parent's height */
-   background-color: #e0e0e0; /* Inner box color */
-   border: 1px solid #000; /* Border for visibility */
-   position: absolute; /* For internal positioning */
-   top: 50%; /* Center vertically */
-   left: 50%; /* Center horizontally */
-   transform: translate(-50%, -50%); /* Offset for centering */
+.controller-circle, .diamond {
+   width: 60px; /* Diameter for circles, adjust for diamond separately */
+   height: 60px;
+   background-color: #b1b1b1;
+   border: 1px solid #000;
+   border-radius: 50%; /* Makes it a circle, remove for diamond */
+   position: absolute;
+   top: 15%;
 }
 
+.controller-circle.left {
+   left: 8%;
+}
 
-.button-row,
-.button-bottom-row {
-    display: grid; /* Use a grid layout */
-    grid-template-columns: repeat(4, auto); /* Four evenly spaced columns */
-    gap: 10px; /* Space between items */
-    width: 80%; /* Define overall row width */
-    position: absolute; /* Absolute positioning */
-    left: 50%; /* Center the row */
-    transform: translateX(-50%); /* Offset by 50% to center */
+.controller-circle.right {
+   right: 8%;
+}
+
+.diamond {
+   width: 45px;
+   height: 45px;
+   border-radius: 0; /* Diamond does not need border-radius */
+   top: 22%;
+   left: 50%;
+   transform: rotate(45deg) translateX(-50%);
+}
+
+.button-row, .button-bottom-row {
+   display: flex;
+   justify-content: space-around; /* Ensures equal spacing */
+   position: absolute;
+   width: 100%; /* Ensures it spans the width of the parent */
+   align-items: center; /* Vertical alignment */
 }
 
 .button-row {
-    bottom: 36%; /* Place the row 36% from the bottom */
+   bottom: 36%;
 }
 
 .button-bottom-row {
-    bottom: 13%; /* Place the lower row 13% from the bottom */
+   bottom: 13%;
 }
 
 .button-rect {
-    background-color: #b1b1b1; /* Box color */
-    border: 1px solid #000; /* Box border */
-    width: 80px; /* Box width */
-    height: 40px; /* Box height */
+   width: 92px;
+   height: 40px;
+   background-color: #b1b1b1;
+   border: 1px solid #000;
+   position: relative; /* Relative to flex container */
 }
 
+.inner-box {
+   display: flex;
+   align-items: center; /* Center vertically */
+   justify-content: center; /* Center horizontally */
+   width: 70%; /* Box occupies 70% of the parent's width */
+   height: 70%; /* Box occupies 70% of the parent's height */
+   background-color: #e0e0e0; /* Inner box color */
+   border: 1px solid #000; /* Border for visibility */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 20px; /* Suitable font size for visibility */
+   font-weight: bold; /* Makes the text bold */
+   font-family: Inter;
+   color: #000; /* Text color */
+}
+
+.diamond .inner-box {
+   transform: translate(-50%, -50%) rotate(-45deg); /* Counteract the diamond's rotation */
+   font-size: 14px;
+}
+
+.footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 20px;
+   background-color: #f1f1f1;
+   border-top: 1px solid #ccc;
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+
+.footer-text {
+   color: #333; /* Text color */
+   font-size: 16px; /* Text size */
+}
+
+.footer-text.left {
+   text-align: left;
+}
+
+.footer-text.right {
+   text-align: right;
+}
+
+
+@media (max-width: 768px) {
+   .button-rect {
+       width: 15vw; /* Adjust based on viewport width */
+       height: 7vh; /* Adjust based on viewport height */
+   }
+}
+
+@media (min-width: 1024px) {
+   .button-rect {
+       width: 105px;
+       height: 50px;
+   }
+}

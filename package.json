@@ -1,19 +1,24 @@
 {
   "name": "sdvx-keybind-editor",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A keybind editor for SOUND VOLTEX controllers",
+  "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron .",
+    "rebuild": "electron-rebuild",
+    "postinstall": "electron-rebuild"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^30.0.2"
+    "electron": "^30.0.2",
+    "electron-rebuild": "^3.2.9"
   },
   "dependencies": {
     "node-hid": "^3.0.0",
-    "robotjs": "^0.6.0"
-  },
-  "description": ""
+    "robotjs": "^0.6.0",
+    "usb": "^2.12.1",
+    "usb-detection": "^4.14.2"
+  }
 }

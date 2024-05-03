@@ -1,24 +1,39 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const usbDetect = require('usb-detection');
 
-function createWindow() {
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+usbDetect.startMonitoring();
+
+let mainWindow;
+
+app.on('ready', () => {
+    mainWindow = new BrowserWindow({
+        width: 1200,
+        height: 650,
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
-        },
+            contextIsolation: false
+        }
     });
 
-    win.loadFile('index.html');
-}
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-app.whenReady().then(createWindow);
+    const connectedControllers = {};
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit();
+    usbDetect.on('add', (device) => {
+        const controllerName = 'FaCloud'; // Assuming a method to determine this
+        connectedControllers[device.serialNumber] = controllerName;
+        mainWindow.webContents.send('controller-status', { status: 'connected', name: controllerName });
+    });
+
+    usbDetect.on('remove', (device) => {
+        const name = connectedControllers[device.serialNumber];
+        if (name) {
+            mainWindow.webContents.send('controller-status', { status: 'disconnected', name: name });
+            delete connectedControllers[device.serialNumber];
+        }
+    });
 });
 
-app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+app.on('window-all-closed', () => {
+    app.quit();
 });
