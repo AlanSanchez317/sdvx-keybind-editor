@@ -208,14 +208,6 @@ body {
     transform: translateX(-50%); /* Offset by 50% to center */
 }
 
-.button-rect {
-    width: 92px; /* Rectangle width */
-    height: 40px; /* Rectangle height */
-    background-color: #b1b1b1;
-    border: 1px solid #000;
-    margin: 0 13px; /* Space between rectangles */
-}
-
 .button-bottom-row {
     display: flex;
     justify-content: center;
@@ -231,78 +223,46 @@ body {
 
 }
 
-.inner-box {
-    width: 60%; /* Proportional to parent */
-    height: 60%; /* Proportional to parent */
-    background-color: #e0e0e0; /* Inner box color */
-    border: 1px solid #000; /* Border for visibility */
-    position: absolute; /* Position within parent */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset for centering */
+/* Standardize .inner-box size, position, and color */
+.inner-box { 
+   width: 60%; /* Half the parent's width */
+   height: 60%; /* 60% of the parent's height */
+   background-color: #e0e0e0; /* Color for the inner box */
+   border: 1px solid #000; /* Border for visibility */
+   position: absolute; /* For internal positioning */
+   top: 50%; /* Center vertically */
+   left: 50%; /* Center horizontally */
+   transform: translate(-50%, -50%); /* Offset to center */
 }
 
-.inner-box-1{
-   width: 10%; 
-   height: 70%; 
-   background-color: #e0e0e0; 
-   border: 1px solid #000; 
+.inner-box-1,
+.inner-box-2,
+.inner-box-3,
+.inner-box-4,
+.inner-box-5,
+.inner-box-6 {
+   /* Inherit and refine */
+   width: 50%;
+   height: 60%;
+   background-color: #e0e0e0;
+   border: 1px solid #000;
    position: absolute;
-   top: 50%; 
-   left: 27.5%; 
-   transform: translate(-50%, -50%); 
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
-.inner-box-2{
-   width: 10%; 
-   height: 70%; 
-   background-color: #e0e0e0; 
-   border: 1px solid #000; 
-   position: absolute;
-   top: 50%; 
-   left: 42.5%; 
-   transform: translate(-50%, -50%); 
+/* Ensure each button-row is well spaced */
+.button-row,
+.button-bottom-row {
+   display: flex;
+   justify-content: center; /* Consistent centering */
 }
 
-.inner-box-3{
-   width: 10%; 
-   height: 70%; 
-   background-color: #e0e0e0; 
-   border: 1px solid #000; 
-   position: absolute;
-   top: 50%; 
-   left: 57.5%; 
-   transform: translate(-50%, -50%); 
-}
-
-.inner-box-4{
-   width: 10%; 
-   height: 70%; 
-   background-color: #e0e0e0; 
-   border: 1px solid #000; 
-   position: absolute;
-   top: 50%; 
-   left: 72.5%; 
-   transform: translate(-50%, -50%); 
-}
-
-.inner-box-5{
-   width: 10%; 
-   height: 70%; 
-   background-color: #e0e0e0; 
-   border: 1px solid #000; 
-   position: absolute;
-   top: 50%; 
-   left: 35.2%; 
-   transform: translate(-50%, -50%); 
-}
-.inner-box-6{
-   width: 10%; 
-   height: 70%; 
-   background-color: #e0e0e0; 
-   border: 1px solid #000; 
-   position: absolute;
-   top: 50%; 
-   left: 64.8%; 
-   transform: translate(-50%, -50%); 
+.button-rect {
+   width: 80px; /* Standard width */
+   height: 40px; /* Standard height */
+   background-color: #b1b1b1;
+   border: 1px solid #000;
+   margin: 0 10px; /* Consistent spacing */
 }
