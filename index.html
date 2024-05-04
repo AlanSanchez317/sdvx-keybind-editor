@@ -20,35 +20,35 @@
 <div id="buttons-section">
     <div class="controller-background">
         <div class="controller-circle left">
-            <div class="inner-box">S</div>
+            <div class="inner-box" id="display-vol-l" >S</div>
         </div>
         <div class="controller-circle right">
-            <div class="inner-box">L</div>
+            <div class="inner-box" id="display-vol-r">L</div>
         </div>
         <div class="diamond">
-            <div class="inner-box">Enter</div>
+            <div class="inner-box" id="display-start">Enter</div>
         </div>
         <div class="button-row">
             <div class="button-rect button-1">
-                <div class="inner-box">D</div>
+                <div class="inner-box" id="display-bt-a">D</div>
             </div>
             <div class="button-rect button-2">
-                <div class="inner-box">F</div>
+                <div class="inner-box" id="display-bt-b">F</div>
             </div>
             <div class="button-rect button-3">
-                <div class="inner-box">J</div>
+                <div class="inner-box" id="display-bt-c">J</div>
             </div>
             <div class="button-rect button-4">
-                <div class="inner-box">K</div>
+                <div class="inner-box" id="display-bt-d">K</div>
             </div>
         </div>
 
         <div class="button-bottom-row">
             <div class="button-rect button-5">
-                <div class="inner-box">V</div>
+                <div class="inner-box" id="display-fx-l">V</div>
             </div>
             <div class="button-rect button-6">
-                <div class="inner-box">N</div>
+                <div class="inner-box" id="display-fx-r">N</div>
             </div>
         <!-- Inner content of the controller background remains -->
     </div>
@@ -70,39 +70,39 @@
         <!-- Keybind configuration entries, consistent with the design -->
         <div class="config-entry">
             <label for="bt-a">BT-A Keybind</label>
-            <input type="text" id="bt-a" value="D">
+            <input type="text" id="bt-a" data-display-id="display-bt-a" value="D">
             </div>
             <div class="config-entry">
-            <label for="bt-a">BT-B Keybind</label>
-            <input type="text" id="bt-b" value="F">
+            <label for="bt-b">BT-B Keybind</label>
+            <input type="text" id="bt-b" data-display-id="display-bt-b" value="F">
             </div>
             <div class="config-entry">
-            <label for="bt-a">BT-C Keybind</label>
-            <input type="text" id="bt-c" value="J">
+            <label for="bt-c">BT-C Keybind</label>
+            <input type="text" id="bt-c" data-display-id="display-bt-c" value="J">
             </div>
             <div class="config-entry">
-                <label for="bt-a">BT-D Keybind</label>
-                <input type="text" id="bt-d" value="K">
+                <label for="bt-d">BT-D Keybind</label>
+                <input type="text" id="bt-d" data-display-id="display-bt-d" value="K">
             </div>
             <div class="config-entry">
-                <label for="bt-a">FX-L Keybind</label>
-                <input type="text" id="fx-l" value="S">
+                <label for="fx-l">FX-L Keybind</label>
+                <input type="text" id="fx-l" data-display-id="display-fx-l" value="S">
             </div>
             <div class="config-entry">
-                <label for="bt-a">FX-R Keybind</label>
-                <input type="text" id="fx-r" value="L">
+                <label for="fx-r">FX-R Keybind</label>
+                <input type="text" id="fx-r" data-display-id="display-fx-r" value="L">
             </div>
             <div class="config-entry">
-                <label for="bt-a">VOL-L Keybind</label>
-                <input type="text" id="vol-l" value="V">
+                <label for="vol-l">VOL-L Keybind</label>
+                <input type="text" id="vol-l" data-display-id="display-vol-l" value="V">
             </div>
             <div class="config-entry">
-                <label for="bt-a">VOL-R Keybind</label>
-                <input type="text" id="vol-r" value="N">
+                <label for="vol-r">VOL-R Keybind</label>
+                <input type="text" id="vol-r" data-display-id="display-vol-r" value="N">
             </div>
             <div class="config-entry">
-                <label for="bt-a">START Keybind</label>
-                <input type="text" id="start" value="ENTER">
+                <label for="start">START Keybind</label>
+                <input type="text" id="start" data-display-id="display-start" value="ENTER">
             </div>
 
 <!-- These options, once with JS Support, should allow the user to enter whatever key for that specific button, save it, and make it appear on the layout section -->
